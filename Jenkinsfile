@@ -12,7 +12,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                echo 'Récupération du projet depuis GitHub...'
+                echo 'Recuperation du projet depuis GitHub...'
 
                 git branch: 'main',
                     url: 'https://github.com/SarraOunais/DevOps-AppGestionDesProjets.git'
@@ -21,10 +21,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Vérification du projet...'
+                echo 'Verification du projet...'
 
                 sh '''
-                    echo "Projet récupéré avec succès"
+                    echo "Projet recupere avec succes"
                     ls -la
                     echo "Backend :"
                     ls -la backend
@@ -47,7 +47,7 @@ pipeline {
 
         stage('Docker Login') {
             steps {
-                echo 'Connexion à Docker Hub...'
+                echo 'Connexion a Docker Hub...'
 
                 withCredentials([
                     usernamePassword(
@@ -79,14 +79,12 @@ pipeline {
 
     post {
         success {
-            echo 'Pipeline terminé avec succès !'
-            echo 'Les images Docker ont été envoyées vers Docker Hub.'
+            echo 'Pipeline termine avec succes !'
+            echo 'Les images Docker ont ete envoyees vers Docker Hub.'
         }
 
         failure {
-            echo 'Le pipeline a échoué.'
+            echo 'Le pipeline a echoue.'
         }
     }
 }
-```
-
