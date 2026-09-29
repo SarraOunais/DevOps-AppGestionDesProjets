@@ -228,3 +228,4 @@ pipeline {
 
 **ESPRIT — UP ASI**  # Webhook Jenkins
 # Jenkins Docker
+# Test de déclenchement automatique du pipeline Jenkins.
